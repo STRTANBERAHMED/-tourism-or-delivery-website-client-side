@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Thompson",
+        "season": "Rebekah",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    },
+    {
+        "id": 2,
+        "name": "Pugh",
+        "season": "Bianca",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    },
+    {
+        "id": 3,
+        "name": "Vickie",
+        "season": "Bishop",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    },
+    {
+        "id": 4,
+        "name": "Riggs",
+        "season": "Dina",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    },
+    {
+        "id": 5,
+        "name": "Kristy",
+        "season": "Janice",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    },
+    {
+        "id": 6,
+        "name": "Evangeline",
+        "season": "Letitia",
+        "picture": "http://placehold.it/32x32",
+        "price": 500
+    }
+]

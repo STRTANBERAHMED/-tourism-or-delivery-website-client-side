@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const Service = ({ props }) => {
+const Service = (props) => {
     const { name, picture, season, price } = props.service || {}
 
 
@@ -14,6 +14,9 @@ const Service = ({ props }) => {
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
                             <p>{season}</p>
+                        </Card.Text>
+                        <Card.Text>
+                            <p>{price}</p>
                         </Card.Text>
                     </Card.Body>
                 </Card>

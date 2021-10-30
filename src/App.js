@@ -23,9 +23,9 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          {/* <Route path="/services">
+          <Route path="/services">
             <Services></Services>
-          </Route> */}
+          </Route>
           <Route path="/addService">
             <AddService></AddService>
           </Route>
