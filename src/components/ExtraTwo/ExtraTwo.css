@@ -1,0 +1,8 @@
+.list{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.count :hover{
+    background-color: black;
+    color: white;
+}

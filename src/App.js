@@ -9,45 +9,53 @@ import Login from './components/Login/Login';
 import Blogs from './components/Blogs/Blogs';
 import Services from './components/Services/Services';
 import AddService from './components/AddService/AddService';
-import ManageServices from './components/ManageServices/ManageServices';
+import ManageOrders from './components/ManageOrders/ManageOrders';
+import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyOrder from './components/MyOrder/MyOrder';
 
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route exact path="/home">
-            <Home></Home>
-          </Route>
-          <Route exact path="/services">
-            <Services></Services>
-          </Route>
-          <Route exact path="/manageServices/:id">
-            <ManageServices></ManageServices>
-          </Route>
-          <Route exact path="/addService">
-            <AddService></AddService>
-          </Route>
-          <Route exact path="/Blogs">
-            <Blogs></Blogs>
-          </Route>
-          <Route exact path="/about">
-            <About></About>
-          </Route>
-          <Route exact path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/myOrder">
+              <MyOrder></MyOrder>
+            </Route>
+            <PrivateRoute exact path="/services">
+              <Services></Services>
+            </PrivateRoute>
+            <PrivateRoute exact path="/manageOrders/:id">
+              <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute exact path="/addService">
+              <AddService></AddService>
+            </PrivateRoute>
+            <Route exact path="/Blogs">
+              <Blogs></Blogs>
+            </Route>
+            <Route exact path="/about">
+              <About></About>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

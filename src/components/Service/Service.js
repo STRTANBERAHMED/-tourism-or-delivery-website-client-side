@@ -8,7 +8,7 @@ const Service = (props) => {
     const history = useHistory()
 
     const handleDetails = (_id) => {
-        const uri = `/manageServices/${_id}`
+        const uri = `/manageOrders/${_id}`
         history.push(uri)
     }
 
@@ -20,7 +20,7 @@ const Service = (props) => {
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            {season}
+                            In {season}
                         </Card.Text>
                         <Card.Text>
                             ${price}

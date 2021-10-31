@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import Services from '../Services/Services';
+import { useParams } from 'react-router';;
 
-const ManageServices = () => {
+const ManageOrders = () => {
     const { id } = useParams()
-    const [manageServices, setManageServices] = useState([])
+    const [manageOrders, setManageOrders] = useState([])
     const [specific, setSpecific] = useState({})
 
     useEffect(() => {
         fetch("https://afternoon-ocean-08044.herokuapp.com/services")
             .then(res => res.json())
-            .then(data => setManageServices(data))
+            .then(data => setManageOrders(data))
     }, [])
 
     useEffect(() => {
-        if (manageServices.length > 0) {
-            const matchedData = manageServices.find(item => item._id == id)
+        if (manageOrders.length > 0) {
+            const matchedData = manageOrders.find(item => item._id == id)
             setSpecific(matchedData)
         }
 
-    }, [manageServices]);
+    }, [manageOrders]);
 
     return (
         <div className="container mt-4">
@@ -38,4 +37,4 @@ const ManageServices = () => {
     );
 };
 
-export default ManageServices;
+export default ManageOrders;
