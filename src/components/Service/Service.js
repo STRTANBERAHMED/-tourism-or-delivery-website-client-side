@@ -1,9 +1,16 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
 
 const Service = (props) => {
-    const { name, picture, season, price } = props.service || {}
+    const { _id, name, picture, season, price } = props.service || {}
 
+    const history = useHistory()
+
+    const handleDetails = (_id) => {
+        const uri = `/manageServices/${_id}`
+        history.push(uri)
+    }
 
     return (
         <div className="col-md-4 item">
@@ -13,11 +20,14 @@ const Service = (props) => {
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
-                            <p>{season}</p>
+                            {season}
                         </Card.Text>
                         <Card.Text>
-                            <p>{price}</p>
+                            ${price}
                         </Card.Text>
+                        <Button
+                            onClick={() => handleDetails(_id)}
+                            variant="dark">Book Now</Button>
                     </Card.Body>
                 </Card>
             </div>

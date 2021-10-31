@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Blogs from './components/Blogs/Blogs';
 import Services from './components/Services/Services';
 import AddService from './components/AddService/AddService';
+import ManageServices from './components/ManageServices/ManageServices';
 
 
 function App() {
@@ -20,22 +21,25 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <Route path="/home">
+          <Route exact path="/home">
             <Home></Home>
           </Route>
-          <Route path="/services">
+          <Route exact path="/services">
             <Services></Services>
           </Route>
-          <Route path="/addService">
+          <Route exact path="/manageServices/:id">
+            <ManageServices></ManageServices>
+          </Route>
+          <Route exact path="/addService">
             <AddService></AddService>
           </Route>
-          <Route path="/Blogs">
+          <Route exact path="/Blogs">
             <Blogs></Blogs>
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <About></About>
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Login></Login>
           </Route>
           <Route path="*">
