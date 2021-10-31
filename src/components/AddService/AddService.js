@@ -8,6 +8,7 @@ const AddService = () => {
     const onSubmit = data => {
         console.log(data);
 
+        // axios
         axios.post('https://afternoon-ocean-08044.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
